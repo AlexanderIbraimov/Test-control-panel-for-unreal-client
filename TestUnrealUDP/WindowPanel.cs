@@ -30,11 +30,11 @@ namespace TestUnrealUDP
             var currentGameType = gameType;
             tableLayoutPanel3.Enabled = false;
             tableLayoutPanel5.Enabled = false;
-            tableLayoutPanel6.Enabled = false;
             tableLayoutPanel8.Enabled = false;
             tableLayoutPanel9.Enabled = false;
             tableLayoutPanel10.Enabled = false;
             tableLayoutPanel11.Enabled = false;
+            tableLayoutPanel15.Enabled = false;
             var list = new List<int>();
             switch (game)
             {
@@ -46,7 +46,6 @@ namespace TestUnrealUDP
                 case "baccarat":
                     gameType = GameType.Baccarat;
                     tableLayoutPanel5.Enabled = true;
-                    tableLayoutPanel6.Enabled = true;
                     list = baccaratPlayersIds;
                     if (baccaratPlayersIds.Count > 0)
                     {
@@ -56,9 +55,9 @@ namespace TestUnrealUDP
                         }
                     }
                     break;
-                case "baccarat2":
-                    gameType = GameType.Baccarat2;
-                    list = baccarat2PlayersIds;
+                case "poker":
+                    gameType = GameType.Poker;
+                    tableLayoutPanel15.Enabled = true;
                     break;
                 case "blackjack":
                     gameType = GameType.Blackjack;
@@ -67,6 +66,7 @@ namespace TestUnrealUDP
                     tableLayoutPanel9.Enabled = true;
                     tableLayoutPanel10.Enabled = true;
                     tableLayoutPanel11.Enabled = true;
+                    tableLayoutPanel15.Enabled = false;
                     if (blackjackPlayersIds.Count > 0)
                     {
                         foreach (var id in blackjackPlayersIds)
@@ -93,47 +93,47 @@ namespace TestUnrealUDP
 
         private void button6_Click(object sender, EventArgs e)
         {
-            var name = textBox1.Text;
-            if (string.IsNullOrEmpty(name))
-            {
-                MessageBox.Show("Name cannot be empty");
-                return;
-            }
-            var id = (int)numericUpDown4.Value;
-            if (gameType == GameType.Roulette)
-            {
-                roulettePlayersIds.Add(id);
-            }
-            if (gameType == GameType.Baccarat)
-            {
-                baccaratPlayersIds.Add(id);
-                comboBox4.Items.Add(id);
-                comboBox4.Text = comboBox4.Items[0].ToString();
-            }
+            //var name = textBox1.Text;
+            //if (string.IsNullOrEmpty(name))
+            //{
+            //    MessageBox.Show("Name cannot be empty");
+            //    return;
+            //}
+            //var id = (int)numericUpDown4.Value;
+            //if (gameType == GameType.Roulette)
+            //{
+            //    roulettePlayersIds.Add(id);
+            //}
+            //if (gameType == GameType.Baccarat)
+            //{
+            //    baccaratPlayersIds.Add(id);
+            //    comboBox4.Items.Add(id);
+            //    comboBox4.Text = comboBox4.Items[0].ToString();
+            //}
 
-            if (gameType == GameType.Blackjack)
-            {
-                blackjackPlayersIds.Add(id);
-                comboBox8.Items.Add(id);
-                comboBox8.Text = comboBox8.Items[0].ToString();
-                comboBox11.Items.Add(id);
-                comboBox11.Text = comboBox11.Items[0].ToString();
-                comboBox12.Items.Add(id);
-                comboBox12.Text = comboBox12.Items[0].ToString();
-            }
+            //if (gameType == GameType.Blackjack)
+            //{
+            //    blackjackPlayersIds.Add(id);
+            //    comboBox8.Items.Add(id);
+            //    comboBox8.Text = comboBox8.Items[0].ToString();
+            //    comboBox11.Items.Add(id);
+            //    comboBox11.Text = comboBox11.Items[0].ToString();
+            //    comboBox12.Items.Add(id);
+            //    comboBox12.Text = comboBox12.Items[0].ToString();
+            //}
 
-            comboBox3.Items.Add(id);
-            comboBox3.Text = comboBox3.Items[0].ToString();
+            //comboBox3.Items.Add(id);
+            //comboBox3.Text = comboBox3.Items[0].ToString();
 
-            comboBox7.Items.Add(id);
-            comboBox7.Text = comboBox7.Items[0].ToString();
-
-
-            comboBox13.Items.Add(id);
-            comboBox13.Text = comboBox13.Items[0].ToString();
+            //comboBox7.Items.Add(id);
+            //comboBox7.Text = comboBox7.Items[0].ToString();
 
 
-            Command.AddPlayer(id, name);
+            //comboBox13.Items.Add(id);
+            //comboBox13.Text = comboBox13.Items[0].ToString();
+
+
+            //Command.AddPlayer(id, name);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -181,7 +181,8 @@ namespace TestUnrealUDP
                     comboBox11.Text = comboBox11.Items[0].ToString();
                 comboBox12.Items.Remove(idPlayer);
                 if (comboBox12.Items.Count > 0)
-                    comboBox12.Text = comboBox12.Items[0].ToString();            }
+                    comboBox12.Text = comboBox12.Items[0].ToString();
+            }
 
             comboBox13.Items.Remove(id);
             if (comboBox13.Items.Count > 0)
@@ -237,7 +238,7 @@ namespace TestUnrealUDP
             if (int.TryParse(id, out var idPlayer))
             {
                 var card = comboBox5.Text;
-                Command.SetPlayerCard(idPlayer, card, number, true);
+                Command.SetPlayerCard(idPlayer, card, number);
             }
         }
 
@@ -245,7 +246,7 @@ namespace TestUnrealUDP
         {
             var card = comboBox6.Text;
             var number = (int)numericUpDown5.Value;
-            Command.SetDealerCard(card, number, true);
+            Command.SetDealerCard(card, number);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -256,24 +257,24 @@ namespace TestUnrealUDP
 
         private void button10_Click(object sender, EventArgs e)
         {
-            var id = comboBox8.Text;
-            if (int.TryParse(id, out var idPlayer))
-            {
-                var card = comboBox9.Text;
-                var number = (int)numericUpDown6.Value;
-                bool isFaceUp = checkBox1.Checked;
-                var hand = (int)numericUpDown11.Value;
-                Command.SetPlayerCard(idPlayer, card, number, isFaceUp, hand);
-            }
+            //var id = comboBox8.Text;
+            //if (int.TryParse(id, out var idPlayer))
+            //{
+            //    var card = comboBox9.Text;
+            //    var number = (int)numericUpDown6.Value;
+            //    bool isFaceUp = checkBox1.Checked;
+            //    var hand = (int)numericUpDown11.Value;
+            //    Command.SetPlayerCard(idPlayer, card, number, isFaceUp, hand);
+            //}
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            var card = comboBox10.Text;
-            var number = (int)numericUpDown7.Value;
-            bool isFaceUp = checkBox2.Checked;
+            //var card = comboBox10.Text;
+            //var number = (int)numericUpDown7.Value;
+            //bool isFaceUp = checkBox2.Checked;
 
-            Command.SetDealerCard(card, number, isFaceUp);
+            //Command.SetDealerCard(card, number, isFaceUp);
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -308,8 +309,31 @@ namespace TestUnrealUDP
 
         private void button16_Click(object sender, EventArgs e)
         {
-            var number = (int) numericUpDown10.Value;
+            var number = (int)numericUpDown10.Value;
             Command.DealerFlipCard(number);
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            var id = comboBox15.Text;
+            if (int.TryParse(id, out var idPlayer))
+            {
+                var card = comboBox16.Text;
+                var number = (int)numericUpDown15.Value;
+                Command.SetPlayerCard(idPlayer, card, number);
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            var card = comboBox14.Text;
+            var number = (int)numericUpDown14.Value;
+            Command.SetDealerCard(card, number);
+        }
+
+        private void WindowPanel_Load(object sender, EventArgs e)
+        {
+
         }
     }
 
@@ -319,6 +343,7 @@ namespace TestUnrealUDP
         Baccarat,
         Baccarat2,
         Blackjack,
+        Poker,
         None
     }
 }

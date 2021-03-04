@@ -66,65 +66,62 @@ namespace TestControlPanel
 
         public static void SetPlaceBet(int playerId, decimal bets, int hand)
         {
-            var chips = GetAnArrayOfBets(bets);
-            if(chips.Length == 0 && bets!= Decimal.Zero)
-                return;
-            var command = new Dictionary<string, object>
-            {
-                {"MessageType", (int) MessageType.PlaceBet},
-                {"PlayerId", playerId},
-                {"Hand", hand},
-                {"Bets", chips}
-            };
-            AddCommand(command);
+            //var chips = GetAnArrayOfBets(bets);
+            //if(chips.Length == 0 && bets!= Decimal.Zero)
+            //    return;
+            //var command = new Dictionary<string, object>
+            //{
+            //    {"MessageType", (int) MessageType.PlaceBet},
+            //    {"PlayerId", playerId},
+            //    {"Hand", hand},
+            //    {"Bets", chips}
+            //};
+            //AddCommand(command);
         }
 
 
-        public static void SetDealerCard(string card, int number, bool isFaceUp)
+        public static void SetDealerCard(string card, int number)
         {
             var command = new Dictionary<string, object>
             {
                 {"MessageType", (int) MessageType.DealerCard},
                 {"Card", card},
-                {"Number", number},
-                {"IsFaceUp", isFaceUp}
+                {"Number", number}
             };
             AddCommand(command);
         }
 
-        public static void SetPlayerCard(int playerId, string card, int number, bool isFaceUp, int hand = 1)
+        public static void SetPlayerCard(int playerId, string card, int number)
         {
             var command = new Dictionary<string, object>
             {
                 {"MessageType", (int) MessageType.PlayerCard},
                 {"PlayerId", playerId},
-                {"Hand", hand},
                 {"Card", card},
-                {"Number", number},
-                {"IsFaceUp", isFaceUp},
+                {"Number", number}
             };
             AddCommand(command);
         }
 
         public static void DealerFlipCard(int number)
         {
-            var command = new Dictionary<string, object>
-            {
-                {"MessageType", (int) MessageType.DealerFlipCard},
-                {"Number", number}
-            };
-            AddCommand(command);
+            //var command = new Dictionary<string, object>
+            //{
+            //    {"MessageType", (int) MessageType.DealerFlipCard},
+            //    {"Number", number}
+            //};
+            //AddCommand(command);
         }
 
         public static void PlayerFlipCard(int playerId, int number)
         {
-            var command = new Dictionary<string, object>
-            {
-                {"MessageType", (int) MessageType.PlayerFlipCard},
-                {"PlayerId", playerId},
-                {"Number", number}
-            };
-            AddCommand(command);
+            //var command = new Dictionary<string, object>
+            //{
+            //    {"MessageType", (int) MessageType.PlayerFlipCard},
+            //    {"PlayerId", playerId},
+            //    {"Number", number}
+            //};
+            //AddCommand(command);
         }
 
         //Roulette
@@ -139,31 +136,34 @@ namespace TestControlPanel
         }
         //Baccarat
 
+
+
+
         //Blackjack
 
         public static void Split(int playerId)
         {
-            var command = new Dictionary<string, object>
-            {
-                {"MessageType", (int) MessageType.Split},
-                {"PlayerId", playerId}
-            };
-            AddCommand(command);
+            //var command = new Dictionary<string, object>
+            //{
+            //    {"MessageType", (int) MessageType.Split},
+            //    {"PlayerId", playerId}
+            //};
+            //AddCommand(command);
         }
 
         public static void Insurance(int playerId, decimal bets, int hand = 1)
         {
-            var chips = GetAnArrayOfBets(bets);
-            if (chips.Length == 0 && bets != Decimal.Zero)
-                return;
-            var command = new Dictionary<string, object>
-            {
-                {"MessageType", (int) MessageType.Insurance},
-                {"PlayerId", playerId},
-                {"Hand", hand},
-                {"Bets", chips}
-            };
-            AddCommand(command);
+            //var chips = GetAnArrayOfBets(bets);
+            //if (chips.Length == 0 && bets != Decimal.Zero)
+            //    return;
+            //var command = new Dictionary<string, object>
+            //{
+            //    {"MessageType", (int) MessageType.Insurance},
+            //    {"PlayerId", playerId},
+            //    {"Hand", hand},
+            //    {"Bets", chips}
+            //};
+            //AddCommand(command);
         }
 
         private static void AddCommand(Dictionary<string, object> command)

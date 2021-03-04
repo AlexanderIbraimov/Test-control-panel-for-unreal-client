@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TestControlPanel
+﻿namespace TestControlPanel
 {
     public enum MessageType
     {
@@ -14,17 +8,12 @@ namespace TestControlPanel
         RemovePlayer = 2,
         ResetGame = 3,
         Status = 4,
-        PlaceBet = 5,
-        DealerCard = 6,
-        PlayerCard = 7,
-        PlayerFlipCard = 8,
-        DealerFlipCard = 9,
+        
+        //Baccarat and Poker
+        PlayerCard = 200,
+        DealerCard = 201,
 
         //Roulette
-        ThrowTheBall = 100,
-
-        //Blackjack
-        Split = 400,
-        Insurance = 401
+        ThrowTheBall = 100
     }
 }
