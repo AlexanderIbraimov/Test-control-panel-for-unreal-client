@@ -55,18 +55,18 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.button9 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.label16 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
@@ -138,8 +138,8 @@
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
@@ -517,6 +517,48 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(221, 307);
             this.tableLayoutPanel5.TabIndex = 13;
             // 
+            // button9
+            // 
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button9.Location = new System.Drawing.Point(81, 262);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(136, 23);
+            this.button9.TabIndex = 9;
+            this.button9.Text = "SEND CARD BANKER";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(4, 216);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(51, 13);
+            this.label16.TabIndex = 18;
+            this.label16.Text = "CARD ID";
+            // 
+            // numericUpDown5
+            // 
+            this.numericUpDown5.Location = new System.Drawing.Point(81, 219);
+            this.numericUpDown5.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numericUpDown5.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown5.Name = "numericUpDown5";
+            this.numericUpDown5.Size = new System.Drawing.Size(136, 20);
+            this.numericUpDown5.TabIndex = 10;
+            this.numericUpDown5.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
@@ -537,6 +579,69 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "PLAYER ID";
             // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Items.AddRange(new object[] {
+            "Empty",
+            "C2",
+            "D2",
+            "H2",
+            "S2",
+            "C3",
+            "D3",
+            "H3",
+            "S3",
+            "C4",
+            "D4",
+            "H4",
+            "S4",
+            "C5",
+            "D5",
+            "H5",
+            "S5",
+            "C6",
+            "D6",
+            "H6",
+            "S6",
+            "C7",
+            "D7",
+            "H7",
+            "S7",
+            "C8",
+            "D8",
+            "H8",
+            "S8",
+            "C9",
+            "D9",
+            "H9",
+            "S9",
+            "C10",
+            "D10",
+            "H10",
+            "S10",
+            "CK",
+            "DK",
+            "HK",
+            "SK",
+            "CQ",
+            "DQ",
+            "HQ",
+            "SQ",
+            "CA",
+            "DA",
+            "HA",
+            "SA",
+            "CJ",
+            "DJ",
+            "HJ",
+            "SJ"});
+            this.comboBox6.Location = new System.Drawing.Point(81, 176);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(136, 21);
+            this.comboBox6.TabIndex = 8;
+            this.comboBox6.Text = "Empty";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -545,6 +650,15 @@
             this.label10.Size = new System.Drawing.Size(37, 13);
             this.label10.TabIndex = 1;
             this.label10.Text = "CARD";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(4, 173);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(37, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "CARD";
             // 
             // comboBox5
             // 
@@ -650,120 +764,6 @@
             0,
             0,
             0});
-            // 
-            // numericUpDown5
-            // 
-            this.numericUpDown5.Location = new System.Drawing.Point(81, 219);
-            this.numericUpDown5.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.numericUpDown5.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(136, 20);
-            this.numericUpDown5.TabIndex = 10;
-            this.numericUpDown5.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(4, 216);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(51, 13);
-            this.label16.TabIndex = 18;
-            this.label16.Text = "CARD ID";
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
-            "Empty",
-            "C2",
-            "D2",
-            "H2",
-            "S2",
-            "C3",
-            "D3",
-            "H3",
-            "S3",
-            "C4",
-            "D4",
-            "H4",
-            "S4",
-            "C5",
-            "D5",
-            "H5",
-            "S5",
-            "C6",
-            "D6",
-            "H6",
-            "S6",
-            "C7",
-            "D7",
-            "H7",
-            "S7",
-            "C8",
-            "D8",
-            "H8",
-            "S8",
-            "C9",
-            "D9",
-            "H9",
-            "S9",
-            "C10",
-            "D10",
-            "H10",
-            "S10",
-            "CK",
-            "DK",
-            "HK",
-            "SK",
-            "CQ",
-            "DQ",
-            "HQ",
-            "SQ",
-            "CA",
-            "DA",
-            "HA",
-            "SA",
-            "CJ",
-            "DJ",
-            "HJ",
-            "SJ"});
-            this.comboBox6.Location = new System.Drawing.Point(81, 176);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(136, 21);
-            this.comboBox6.TabIndex = 8;
-            this.comboBox6.Text = "Empty";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(4, 173);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 13);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "CARD";
-            // 
-            // button9
-            // 
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button9.Location = new System.Drawing.Point(81, 262);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(136, 23);
-            this.button9.TabIndex = 9;
-            this.button9.Text = "SEND CARD BANKER";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // tableLayoutPanel7
             // 
@@ -1822,7 +1822,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "WindowPanel";
             this.Text = "Control Panel";
-            this.Load += new System.EventHandler(this.WindowPanel_Load);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -1837,8 +1836,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel13.ResumeLayout(false);

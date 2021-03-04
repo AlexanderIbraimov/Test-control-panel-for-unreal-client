@@ -44,6 +44,7 @@ namespace TestControlPanel
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new WindowPanel());
+            isDispose = true;
         }
 
 //        public static void Main(string[] args)

@@ -330,11 +330,6 @@ namespace TestUnrealUDP
             var number = (int)numericUpDown14.Value;
             Command.SetDealerCard(card, number);
         }
-
-        private void WindowPanel_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 
     enum GameType
